@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var j={};
+        var i = [];
+        var xx = localStorage.getItem('object4')
+        if ( xx )
+        {
+            xx= JSON.parse(xx)
+        }
+        Object.keys(xx).map(function(key,index)
+        {
+            // console.log("Key: ", key ,"|", " Index:"  , index);
+
+            if ( index ==9)
+            {
+                // console.log(index,"index = 9 được in ra ")
+            }
+
+
+            if ( xx[key] > 5 )
+            {
+                j[xx[key]] = xx[key]
+            }
+            
+            
+        }
+        )
+        console.log(j,"J")
+
+        i = xx.filter(key => key >= 5)
+        console.log(i,"I")
+
+        // localStorage.setItem("obj5",JSON.stringify(j))
+    </script>
+</body>
+</html>

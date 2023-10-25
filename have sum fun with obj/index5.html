@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mang5=[]
+        for ( i=0 ; i<=10;i++)
+        {
+            mang5.push(i)
+            // {key : i , value : i} 
+            // cái này em coi là sẽ gán key và value nhưng thử phát thì ra {..},{..},{..}
+        }
+        console.log(mang5)
+
+        localStorage.setItem("object4",JSON.stringify(mang5)); 
+    </script>
+</body>
+</html>

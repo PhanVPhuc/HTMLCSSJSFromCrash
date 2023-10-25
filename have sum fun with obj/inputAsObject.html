@@ -1,0 +1,147 @@
+<!--  Tao 1 form có 2 input: username và email
+
+ - click submit form thi lấy 2 value trên dua vao objCon, 
+ (nhớ kiêm tra xem user va email da nhap chua, chứa thi báo lỗi, ok hết thi đưa vào objCon)
+     {
+         'xx': 'baovic'
+         'yy': 'ac@gmail.com'
+     }
+ sau do dua objCon vao objCha nhu sau
+ {
+     'baovic': {
+         'xx': 'baovic'
+         'yy': 'ac@gmail.com'
+     },
+ } 
+ nhap tiep lan 2 thi them vao objcha nhu sau:
+ {
+     'baovic': {
+         'xx': 'baovic'
+         'yy': 'ac@gmail.com'
+     },
+     ‘namihuong’: {
+         'xx': 'namihuong'
+         'yy': 'ac@gmail.com'
+     }
+ } 
+
+ tuong tu lan 3:
+ {
+     'baovic': {
+         'xx': 'baovic'
+         'yy': 'ac@gmail.com'
+     },
+     ‘namihuong’: {
+         'xx': 'namihuong'
+         'yy': 'ac@gmail.com'
+     },
+     nam: {
+         'xx': 'nam'
+         'yy': 'ac@gmail.com'
+     }
+ } 
+
+
+ GOI Y:
+
+ Lấy "xx" va "yy" làm key của objCon như sau:
+  {
+     'xx': 'baovic'
+     'yy': 'ac@gmail.com'
+  }
+ và lây chinh objcon này đưa vào objCha va dùng value cua username làm key khi dua 
+
+ vao objCha = {
+     'baovic': {
+         'xx': 'baovic'
+         'yy': 'ac@gmail.com'
+     }
+ }
+
+ sau đó dua vao localstroage để giữ lại. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        .err1,
+        .err2 {
+          display: block;
+          color: red;
+        }
+      </style>
+</head>
+<body>
+    <script>
+        var objCha= { }
+        var  objCon ={ }
+        var jj = {}
+        $(document).ready(function () {
+        
+        $("form").submit(function () {
+            var getUsername = $("input#xx").val();
+            var getEmail = $("input#yy").val();
+    
+            if (getUsername == "") {
+            $("p.err1").text("Vui long nhap username ");
+   
+            } else {
+            $("p.err1").text("");
+            }
+            if (getEmail == "") {
+            $("p.err2").text("Vui long nhap mail");
+           } else {
+            $("p.err2").text("");
+            }
+            //getUsername != '' && getEmail != '' trong if
+            if (getUsername != '' && getEmail != '') {
+            objCon = { 
+                xx : getUsername,
+                yy : getEmail
+                }
+            }
+            // localStorage.setItem("ObjCon",JSON.stringify( objCha));
+            
+            jj = localStorage.getItem("ObjCha")
+            // lấy data từ local của objCha ra và check xem có chưa 
+            //  chưa thì th , có thì lấy 
+            if ( jj  )
+            {
+                jj = JSON.parse(jj)                
+                // cho ra đưa vào obj CHA 
+                objCha = jj 
+            }
+            
+            // thêm vào 
+            objCha[objCon.xx] = objCon
+            localStorage.setItem("ObjCha",JSON.stringify(objCha))
+            
+            //cach xu ly:
+            // -trước khi thêm cái thứ 2 vào , lấy thằng 1 trong local ra, 
+            //lấy ra để khoi bị đè mất và gán vao cha, thi luc cha đã co con rồi.
+            // - thêm cai thu 2 vao cha, thi cha co 2 cái                
+            });    
+        });
+        
+        
+        
+
+  </script>
+    <form >
+
+        <input type="text" name="" id="xx" />
+        <p class="err1"></p>
+        <input type="text" name="" id="yy" />
+        <p class="err2"></p>
+        <button type="submit">Submit</button>
+      </form>
+</body>
+</html>

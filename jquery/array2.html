@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var mang4 = [];
+      // var mang5=[]
+      // mang5.push('alo','ola',4,3,1,6,1,2,5,2,76)
+      var zz = localStorage.getItem("mang3");
+      if (zz) {
+        zz = JSON.parse(zz);
+        // zz.map(function(value,key)
+        // {
+        //     // if ( value ==9 )
+        //     // {
+        //     //     console.log(key)
+        //     // }
+        //     if ( value  )
+        //     {
+        //         // console.log(key)
+        //         // document.getElementById("demo").innerHTML = ages.filter(checkAdult);
+        //         // từ array này, dùng MAP(hoac for) lấy các value <= 5 ra và đưa vào arr mới ,
+        //         // và consolo array cuối cùng để xem kêt quả.
+        //         mang4.push(value)
+        //         // console.log(mang4) khi bo trong nay thi mang no se chong len
+        //         // output nhu nay
+        //         //  [0]
+        //         //  [0, 1]
+        //         //  [0, 1, 2]
+        //         //  [0, 1, 2, 3]
+        //         //  [0, 1, 2, 3, 4]
+        //         //  [0, 1, 2, 3, 4, 5]
+        //         // nhu z do
+        //     }
+        // })
+        console.log(zz);
+        //output zz de kiem tra
+        for (
+          zz = 0;
+          zz <= 5;
+          zz++
+        ) //dung ham for de chay de zz de cho no chay value trong mang zz
+        //neu khai bao var i =0 , i<zz.length;i++ thi no se khong biet i no ke thua cai j nen output =[]
+        {
+          //gan gia value tu mang zz sang mang4
+          mang4.push(zz);
+        }
+        console.log(mang4);
+      }
+      //khi de ngoai nay thi mang 4 da dc inherit gia tri tron mang map voi dk value <= 5
+      // output :  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      // console.log(mang4)
+
+      //tương tự vào array này, dùng filter(lọc) lấy các value <= 5 ra và đưa vào arr mới
+      //và consolo array cuối cùng để xem kêt quả.
+
+      var mang5 = mang4.filter(loc);
+      // console.log(mang5)
+
+      function loc(mang4) {
+        //goi function loc(mang4)
+        //tra ve mang 4 which is <= 5 ( value )
+        return mang4 <= 5;
+      }
+
+      var yyy = JSON.stringify(mang5);
+      localStorage.setItem("mang5", yyy);
+    </script>
+  </body>
+</html>

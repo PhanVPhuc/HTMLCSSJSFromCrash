@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- - tao index7.html
+ + lay array bên bài index5 ra(chu y kiem tra co k)
+ + tao 1 array mới có value 11-20
+ + merge array cũ  va array mới vao lại làm 1 .
+ + sau đo tinh tổng các value có trong array mới này. -->
+    <script>
+      var mang6 = [];
+      var sum = 0;
+      var xxx = localStorage.getItem("mang5");
+      if (xxx) {
+        xxx = JSON.parse(xxx);
+        // console.log(xxx)
+      }
+      mang6.push(11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
+      //concat() nay la gop mang lai voi nhau
+      // nhu ben duoi , tui dung mang xxx ke thua mang5 va gop mang 6 lai voi nhau
+      // va khai bao mang gop de no ke thua dc 2 list cua 2 mang nen bien gop co het gia tri trong 2 mang xxx va mang6
+      var gop = xxx.concat(mang6);
+      console.log(gop);
+      // xai sum ham for
+      // for ( var i =0;i<gop.length;i++)
+      // {
+      //     sum+=gop[i]
+      // }
+      // xai sum ham map
+      gop.map(function (value, key) {
+        sum += value;
+      });
+      console.log(sum);
+
+      //tiep theo la minh lam ve object , nó giong nhu mang mà lại đa dạng hơn
+      // khai báo 1 object như sau
+      var Obj = {};
+      // thêm value vào object thì :
+      Obj["vd1"] = "samsung";
+      // hoặc
+      Obj.vd2 = "iphone";
+      //ta dùng dấu "." hoặc [ ] đều được
+      // và key thì do mình tạo ra
+      // value có thể là số , chuỗi hoặc thậm chí cả 1 array và object ( gọi là đa cấp)
+
+
+      // tương tự như array để lấy length ra thì : 
+      // console.log(Object.keys(demo2).length)
+      //để kiểm tra object có data không thì tương tự arr
+      // if(Object.keys(demo2).length>0){....}
+      // cú pháp lấy 1 value ra cuungx tương tự như aray
+      // tên-obj[key]
+
+      // vd muốn lấy iphone ra
+      // console.log(Obj['vd2'])
+      // h lấy var mang5 đưa xuống và làm value của object và đặt vào array với key bất kì
+      Obj["arr"] = mang5;
+
+      //để láy 1 value trong object 2 chiều thì ta dùng như trên nếu muốn lấy nhiều hơn thì
+      // console.log(Obj[arr][2])
+
+      //h tạo 1 obj con như sau
+      var demo2 = {
+        city: "da nang",
+        name: "fuc fan",
+      };
+
+      // //gio dua ọn nay voa lm obj con cua Obj như sau
+      // Obj['arr'] = demo2;
+      // // tương tự để lấy bao viec ra thi lay theo key cha và con
+      // console.log(Obj)
+      // console.log(Obj['arr']['name'])
+
+      //do key cua object k phải là số không dùng được , ta phải dùng hàm MAP
+      // riêng cho nó
+      Object.keys(Obj).map(function (key, index) {
+        // chú ý giờ bên này không còn là value và key như trên array nữa
+        // nó chuyển thành key và index
+        // log key ra xem nó là j
+        //
+        console.log("key : " + key + "value :" + index);
+        //  // console.log(key) => cái này thì key sẽ trả về key cha
+        //console.log(index) => inden tương tự các key trong arr
+        // vay muốn để value ra từng cái thì làm như nào ?
+        // console.log(Obj[key])
+
+        // tuong tu nhu tren neu value va so va muon tinh tong nhu tren thi
+        // vdu: s  += Obj[key]
+      });
+    </script>
+  </body>
+</html>

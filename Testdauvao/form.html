@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .err1,
+      .err2,
+      .err3,
+      .err4,
+      .err5,
+      .err6 {
+        background: red;
+        color: yellow;
+      }
+    </style>
+    <title>form 24h</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        $("form").submit(function () {
+          var getName = $("input.name").val();
+          var getEmail = $("input.email").val();
+          var getStd = $("input.std").val();
+          var getAdds = $("input.adds").val();
+          var getDecs = $("input.decs").val();
+          var getGhichu = $("textarea.ghiChu").val();
+          var x = 1;
+          if (getName == "") {
+            $("p.err1").text("Vui long nhap");
+            x = 8;
+          } else {
+            $("p.err1").text("");
+          }
+          if (getEmail == "") {
+            $("p.err2").text("Vui long nhap");
+            x = 8;
+          } else {
+            $("p.err2").text("");
+          }
+          if (getStd == "") {
+            $("p.err3").text("Vui long nhap");
+            x = 8;
+          } else {
+            $("p.err3").text("");
+          }
+          if (getAdds == "") {
+            $("p.err4").text("Vui long nhap");
+            x = 8;
+          } else {
+            $("p.err4").text("");
+          }
+          if (getDecs == "") {
+            $("p.err5").text("Vui long nhap");
+            x = 8;
+          } else {
+            $("p.err5").text("");
+          }
+          if (getGhichu == "") {
+            $("p.err6").text("Vui long nhap");
+            x = 8;
+          } else {
+            $("p.err6").text("");
+          }
+          if (x == 1) {
+            return true;
+          }
+          return false;
+
+          var getS = $("select").val();
+          if ((getS = "")) {
+            $("p.err8").text("Vui long chon ");
+            // x = 8;
+          } else {
+            $("p.err8").text("");
+          }
+          var getC = $("input#cB1").is(":checked");
+          alert(getC);
+          if (getC == false) {
+            $("p.err7").text("Vui long chon");
+            // x = 8;
+          } else {
+            $("p.err7").text("");
+          }
+        });
+      });
+    </script>
+    <div class="formGY">
+      <h1>Gop Y - Lien he voi 24h</h1>
+      <form action="https://www.youtube.com/watch?v=ybyepVyoKn4" method="get">
+        <div>
+          <label for="name"> Ho va ten : </label>
+          <input type="text" class="name" />
+          <p class="err1"></p>
+        </div>
+        <div>
+          <label for="email"> email nguoi dung : </label>
+          <input type="email" class="email" />
+          <p class="err2"></p>
+        </div>
+        <div>
+          <label for="sdt"> so dien thoai : </label>
+          <input type="number" class="std" />
+          <p class="err3"></p>
+        </div>
+        <div>
+          <label for="address"> dia chi nha : </label>
+          <input type="address" class="adds" />
+          <p class="err4"></p>
+        </div>
+        <div>
+          <label for="decrips">Tieu de : </label>
+          <input type="decrips" class="decs" />
+          <p class="err5"></p>
+        </div>
+        <div>
+          <label class="ghiChu" for="TA">ghi chu : </label>
+          <textarea rows="10" cols="20" class="ghiChu"></textarea>
+          <p class="err6"></p>
+        </div>
+        <div class="checkBox">
+          <label class="gioiTinh" for="TA">Gioi Tinh : </label>
+          <input type="checkbox" id="cB1" /> cai j day
+          <p class="err7"></p>
+        </div>
+        <div class="select">
+          <select>
+            <option value="">please choose category</option>
+            <option value="1">Complain about news quality</option>
+            <option value="2">Conplain about image quality</option>
+            <option value="3">Wrong date/time</option>
+            <option value="4">Fake News</option>
+          </select>
+          <p class="err8"></p>
+        </div>
+        <div class="btns">
+          <button type="submit">Gui</button>
+          <button type="reset">Thoat</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

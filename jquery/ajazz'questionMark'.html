@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <style type="text/css">
+      .demo {
+        background-color: red;
+      }
+      ul {
+        background-color: yellow;
+      }
+      span {
+        background-color: green;
+        display: none;
+        margin: 30px;
+      }
+      XX {
+        background-color: rgb(84, 98, 175);
+        display: block;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // find: tim the html/id/class con
+        $("li").click(function () {
+          $("span").hide();
+          // $(this).find('span').show();
+          // if ($('li').has('span')) {
+          //   $(this).find('span').show();
+          // } else {
+          //   $(this).find('span').hide();
+          // }
+          // if ($('li').hasClass('XX')) {
+          //   $(this).addClass('XX');
+          //   // $(this).find('span').show();
+          // } else {
+          //   $(this).removeClass('XX');
+          //   // $(this).find('span').hide();
+          // }
+          var check = $(this).hasClass("XX");
+          if (check == true) {
+            $(this).removeClass("XX");
+            // $(this).hide();
+          } else {
+            $(this).addClass("XX");
+            if ($("li").has("span")) {
+              $(this).find("span").show();
+            } else {
+              $(this).find("span").hide();
+            }
+          }
+        });
+      });
+    </script>
+    <h1>bai tap</h1>
+    <p>- click vao Li nao thi SHOW SPAN con của nó ra</p>
+    <p>
+      - click vao Li khác thi SHOW SPAN con của nó ra và HIDE các SPAN khac di
+    </p>
+    <p>- click vao Li dang có SPAN show thi HIDE SPAN do di</p>
+    <p></p>
+    <ul>
+      <li>
+        menu1
+        <span class="">span1</span>
+      </li>
+      <li>
+        menu2
+        <span class="">span2</span>
+      </li>
+      <li>
+        menu3
+        <span class="">span3</span>
+      </li>
+      <li>
+        menu4
+        <span>span4</span>
+      </li>
+    </ul>
+  </body>
+</html>

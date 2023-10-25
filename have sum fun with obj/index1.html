@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var object1 = {};
+      object1["vd1"] = "samsung";
+      object1["vd2"] = "iphone";
+      object1["vd3"] = "nokia";
+      object1["vd4"] = "Oppo";
+      console.log(object1);
+
+      var index1 = JSON.stringify(object1);
+      localStorage.setItem("object1", index1);
+    </script>
+  </body>
+</html>

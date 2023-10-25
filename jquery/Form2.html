@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style type="text/css">
+      p {
+        background-color: red;
+      }
+    </style>
+    <!-- phai goi thu vien no vao -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("form").submit(function (e) {
+          // dung luôn
+          // e.preventDefault();
+
+          var getS = $("select").val();
+
+          if (getS == "") {
+            // =>loi
+          } else {
+            // ok
+          }
+
+          // lay trang thai da check hay chua?
+          var getC = $("input#checkbox").is(":checked");
+          alert(getC);
+
+          if (getC == false) {
+            // =>loi
+          } else {
+            // ok
+          }
+
+          return false;
+        });
+
+        // bien toan cuc: la bien dc su dung o bat ky dau
+        // bien cuc bo : la bien dc su dung trog pham vi khai bao
+
+        // // bien toan cuc
+        // var x = 123;
+        // var tam = "";
+
+        // $(".form1").submit(function(e){
+
+        //     // bien cuc bo
+        //     var  y = 456
+
+        //     if(gia su ok){
+        //         tam = y;
+        //     }
+
+        // })
+
+        // $(".form2").submit(function(e){
+        //   alert(tam) =>456
+        // })
+      });
+    </script>
+  </head>
+  <body>
+    <form action="https://www.24h.com.vn/?">
+      <!--  input type=text, checkbox, raido, file
+             textrea,
+             select -->
+
+      <input value="" type="checkbox" id="checkbox" name="" />
+
+      <select>
+        <option value="">vui long chon</option>
+        <option value="1">female</option>
+        <option value="2">male</option>
+      </select>
+
+      <button type="submit">send</button>
+    </form>
+  </body>
+</html>

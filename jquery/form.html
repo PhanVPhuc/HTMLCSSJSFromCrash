@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>find</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .blue {
+        color: blue;
+        background-color: yellow;
+      }
+      .err1,
+      .err2 {
+        display: block;
+        background-color: yellow;
+        color: red;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $("form").submit(function () {
+          var getEmail = $("input.email").val();
+          var getPass = $("input.pass").val();
+          var x = 1;
+          if (getEmail == "") {
+            $("p.err1").text("Vui long nhap");
+            x = 2;
+          } else {
+            $("p.err1").text("");
+          }
+          if (getPass == "") {
+            $("p.err2").text("Vui long nhap");
+            x = 2;
+          } else {
+            $("p.err2").text("");
+          }
+          //getEmail != '' && getPass != '' trong if
+          if (x == 1) {
+            return true;
+          }
+          return false;
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <form action="https://hocwebchuan.com/reference/jquery/jquery_has.php">
+      <input type="text" name="" class="email" />
+      <p class="err1"></p>
+      <input type="text" name="" class="pass" />
+      <p class="err2"></p>
+      <button type="submit">send</button>
+    </form>
+  </body>
+</html>

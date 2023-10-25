@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .box {
+        color: #fff;
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+      }
+      .red {
+        background: #ff0000;
+      }
+      .green {
+        background: #228b22;
+      }
+      .blue {
+        background: #0000ff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <script language="javascript">
+      //   $(document).ready(function () {
+      //     alert('Trình duyệt đã tải xong!');
+      //   });
+      //   function showTextVal() {
+      //     var value = document.getElementById('id-textbox').value;
+      //     alert(value);
+      //   }
+
+      //   Lấy đối tượng có id = id-button trong javascript
+      //   var object = document.getElementById('id-button');
+
+      // Lấy đối tượng có id = id-button trong jQuery
+      var object = $('#id-button');
+      //Hoặc
+      // var object = jQuery('#id-button');
+
+      // Khi click vào button có id = id-button
+      $('#id-button').click(function () {
+        // Cách 1: Khai báo biến và lấy giá trị
+        // var textbox = $('#id-textbox');
+        // alert(textbox.val());
+
+        // Cách 2: Truy xuất trực tiếp
+        alert($('#id-textbox').val());
+      });
+    </script> -->
+
+    <!-- <script>
+      $(document).ready(function () {
+        $('input[type="radio"]').click(function () {
+          var inputValue = $(this).attr('value');
+          var targetBox = $('.' + inputValue);
+          $('.box').not(targetBox).hide();
+          $(targetBox).show();
+        });
+      });
+    </script> -->
+    <script>
+      $(document).ready(function () {
+        $('input[type="radio"]').click(function () {
+          var inputValue = $(this).attr("value");
+          var targetBox = $("." + inputValue);
+          $(".box").not(targetBox).hide();
+          $(targetBox).show();
+        });
+      });
+    </script>
+    <div>
+      <label><input type="radio" name="colorRadio" id="red" />Red</label>
+      <label><input type="radio" name="colorRadio" id="blue" />blue</label>
+      <label><input type="radio" name="colorRadio" id="green" />green</label>
+    </div>
+    <div class="red box">You choose Red ranger *kachow*</div>
+
+    <div class="blue box">You choose Blue ranger *kaBoom*</div>
+    <div class="green box">
+      You choose a talking tree bush *Phoắc zu a mê ri cần , đaii *
+      <img
+        src="https://cdn.britannica.com/42/142842-050-83690FAB/soldier-bunker-Viet-Cong-Vietnam-War.jpg"
+        alt="Aduma"
+      />
+    </div>
+  </body>
+</html>

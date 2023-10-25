@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var xx = localStorage.getItem("object2");
+      if (xx) {
+        xx = JSON.parse(xx);
+      }
+      Object.keys(xx).map(function (key, index) {
+        // console.log('key : '+key+'    value : '+value);
+        // var newxx = xx.del("vd3");
+        
+      });
+        
+      delete xx['vd3']
+      // console.log(xx)
+      console.log(xx);
+      localStorage.setItem("object3",JSON.stringify(xx));
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .active {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          //khai báo biến getClass và gán giá trị là mỗi lần click vào button với $(this).attr('class') chọn giá trị thuộc tính class được chỉ định tại button  khi có $(this)
+          var getClass = $(this).attr("class");
+
+          //thực hiện hàm nối id cua the p và ham getClass và sau đó thêm class active vào thẻ P
+          $("p#" + getClass).addClass("active");
+        });
+      });
+    </script>
+    <button class="demo">click me !</button>
+    <p id="demo">Click on this paragraph</p>
+  </body>
+</html>

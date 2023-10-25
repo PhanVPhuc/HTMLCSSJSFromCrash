@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+
+    <style type="text/css">
+      .hide {
+        display: none;
+      }
+      .show {
+        display: block;
+      }
+
+      ul li {
+        display: inline-block;
+        margin: 0 10px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Yêu cầu:  Click vào tab nào thi show hinh ảnh con của tab đó bên dưới (sử dụng html bên dưới thêm class va id tuỳ thích)
+    chu ý: mỗi lần click thi chỉ 1 hình ảnh dc hien thi.
+    Nghia la click vao TINTUC  thi chi có hình ảnh của tt dc hien thi.
+    click vao bongda thi chi có hình ảnh cua bong da dc hien thi... -->
+    <!-- hover  li , xuat anh con  , click li xuat anh too ==> 2 function . 1 hover 1 click .  hover dung attr de chon class show de show anh ra   -->
+    <script>
+      $(document).ready(function () {
+        $("li").click(function () {
+          // $('li').hover(function () {
+          //   $(this).addClass('show');
+          // });
+          var getClass = $(this).attr("class");
+
+          // hasclass(div);
+          // kiem tra thang nao co show thi xoa , xai lenh if else .
+          if ($("div#" + getClass).hasClass("show")) {
+            $("div#" + getClass).removeClass("show");
+          } else {
+            $("div#" + getClass).addClass("show");
+          }
+        });
+      });
+    </script>
+    <div class="demo">
+      <ul>
+        <li class="thoiSu" id="">tin tuc</li>
+        <li class="bongDa" id="">bong da</li>
+        <li class="thoiTrang" id="">thoi trang</li>
+      </ul>
+      <div class="content">
+        <div id="thoiSu" class="hide show">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO-lH7Q15x0hDMPXHfAWxTR1sHRGVe3ZYwIg&usqp=CAU"
+          />
+        </div>
+        <div id="bongDa" class="hide show">
+          <img
+            src="https://cdn.tgdd.vn/Files/2014/08/28/562705/nhung-luu-y-ve-suc-khoe-cho-fan-bong-da-15-760x367.jpg"
+          />
+        </div>
+        <div id="thoiTrang" class="hide show">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO-lH7Q15x0hDMPXHfAWxTR1sHRGVe3ZYwIg&usqp=CAU"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

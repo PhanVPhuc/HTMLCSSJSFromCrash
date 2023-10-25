@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+
+    <script type="text/javascript">
+      // luc nay tren nay se nhan vao 2 tham so
+      function sayHello(x, y, z) {
+        if (z == true) {
+          // goi ham trong ham
+          tinhTong(x, y);
+        } else {
+          tinhgNhan(x, y);
+        }
+      }
+
+      function tinhTong(x, y) {
+        tong = x + y;
+        alert(tong);
+      }
+      function tinhgNhan(x, y) {
+        tong = x * y;
+        alert(tong);
+      }
+
+      // cong thuc
+      function tinhSum(x, y) {
+        s = 0;
+        for (var i = x; i < y; i++) {
+          s = s + i;
+        }
+        alert(s);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- function (hàm): lam nhiem vu ma su kienmuon
+    event(su kien):la nhung hanh dong tac dong vao the html: click, hover, change -->
+
+    <h1>viet 1 su kien onclick(click vao the html) thi ham sayHello se chay</h1>
+
+    <!-- truyen vao hàm này 2 tham so -->
+    <button onclick="sayHello(2,3, true)">tong</button>
+    <button onclick="sayHello(9,9, false)">nhan</button>
+    <button onclick="tinhSum(20,30)">tinh tong tu 1-10</button>
+
+    <!-- xem lai va lam lai cac bai tap ifva for, bang cach viet function va truyen tham so vao -->
+  </body>
+</html>

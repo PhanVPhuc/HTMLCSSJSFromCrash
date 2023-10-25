@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // mang la 1 bien co the chua nhieu value.
+
+      //cach khai bao nhu sau:
+      var mang1 = [];
+      // hoac array new( )
+
+      //them phan tu( value ) vao mang thi dung ham push nhu sau
+      mang1.push("iphone", "nokia", "samsung");
+
+      //console.log ra check output
+      console.log(mang1);
+
+      //
+      //      key:value
+      //      0: iphone
+      //      1 : nokia
+      //      2: samsung
+      //      length : 3
+
+      //   length: cho biet mang co 3 phan tu
+      //  sau nay muon kiem tra mang co data khong thi xai
+      //  if(mang1.length > 0) {...}
+
+      //   lay length ra thi :
+      //  console.log(mang1.length)
+
+      //  key: tu dong tao ra, bat day bang 0 va tang dan dan len thi:
+      // ta co cu phap lay value: ten-mang[key]
+      // vdu muon lay samsung ra thi
+      // console.log(mang1[2])
+
+      // dung for thi hien thi tung value trong mang ra
+      // do key bat dau =0 ne khi i chay cung phai tu 0
+      for (var i = 0; i < mang1.length; i++) {
+        // console.log(mang1(i))\
+        // vdu muon dung vong 1 lay ra 1 key =2 thi
+        if (i == 2) {
+          // console.log(mang1[i])
+        }
+      }
+
+      // vong lap MAP nhu for nhung cach dung khac nhau :
+      mang1.map(function (
+        value,
+        key
+      ) //vong lap nay co 1 diem la k can dem i=0 va length gi het
+      // co bnhieu value va key thi no tu lay ra het
+      //co bao nhieu value va key thi no tu lay ra het
+      {
+        // lay value ra
+        // console.log(value)
+        // lay key ra
+        // console.log(key)
+
+        // tuong tu nhu con for , muon lay 1 cai ra ? here yo example
+        if (key == 2) {
+          // console.log(value)
+        }
+      });
+
+      // gio tao 1 mang so nhu sau
+      var mang2 = [];
+      // them du lieu o mang2
+      mang2.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+      var sum = 0;
+      // dung for de viet ham tinh tong cac so trong mang
+      for (var i = 0; i < mang2.length; i++) {
+        // sum = sum + mang2[i];
+      }
+      // console.log(sum);
+
+      // dung MAP tinh tong cac so trong mang 2 ?
+      var s = 0;
+      mang2.map(function (value, key) {
+        s += value;
+      });
+      console.log(s);
+
+      // phan tiep theo huong dan su dung localStorage
+      // localStorage la 1 bo nho tam , co the luu tru data o dang chuoi ,
+      // chi can dua data vao thi qua trang html khac co the lay ra dung
+      // va no chi cho phep luu tru data o dang chuoi nen khi dua array vao
+      // thi phai chuyen sang dang chuoi nhu truoc , example:
+
+      // vdu dua mang2 o tren vao thi :
+      var xx = JSON.stringify(mang2);
+      localStorage.setItem("oldThing", xx);
+
+      //nghia la dua chuoi xx vao localStorage bang ten demo
+      //no se nam o application >> storage >> local storage >> IP may  ¯\_(ツ)_/¯
+
+      // sau khi xem da co thi lay thu qua trang khac xem the nao
+    </script>
+  </body>
+</html>

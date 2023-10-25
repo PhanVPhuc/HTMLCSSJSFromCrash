@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        // mảng là 1 biến có thể chứa nhiều value.
+
+        // cách khai bao 1 mảng như sau:
+        var mang1 = [] //hoạc array new()
+
+        // thêm value vào mảng thi dùng ham push như sau
+            mang1.push("iphone", "nokia", "samsung")
+            mang1.push("google")
+            // console.log ra xem có gi
+            console.log(mang1);
+
+            // key:value
+            // 0:"iphone"
+            // 1:"nokia"
+            // 2:"samsung
+            // length:3
+
+            // length: cho biết mảng có 3 phân tử
+            // sau này muốn kiểm tra mang có data k thì?
+            // if(mang1.length >0 ){...}
+
+            // lấy length ra thì: 
+            // console.log(mang1.length)
+
+            // key: tự động tao ra, bắt đầu bằng 0 va tang len, key < length 1 dvi
+
+            // cu pháp lấy value ra: tên-mang[key]
+            // vdu lấy samsung ra thi
+            // console.log(mang1[2])
+
+            // dùng for hiện thị từng value trong mảng ra
+            // do key bắt đầu = 0, nên cho i chạy từ 0
+            for (var i = 0; i < mang1.length; i++) {
+                // console.log(mang1[i])
+                // vdu muốn dùng vòng 1 lấy ra 1 cái key = 2 thi
+                if(i==2){
+                    // console.log(mang1[i])
+                }
+            }
+
+            // vòng lặp MAP như for nhưng cách dùng khác nhau:
+            // vong lặp này có 1 điểm là k cần đếm i=0 va length gi hết,
+            // có bnhieu value va key thi nó tự lấy ra hết
+            // value va key bên trong này cũng chinh la value va key của mang1
+            mang1.map(function(value, key){
+                // lay value ra
+                // console.log(key)
+
+                // lấy key ra
+                // console.log(key)
+
+                // tuong tự for, muốn lay 1 cái ra thôi, vdu
+                if(key == 2){
+                    // console.log(value)
+                }
+            })
+
+            // giờ tao 1 mảng bằng số như sau
+            var mang2 = []
+                mang2.push(1,7,3,9,5,6)
+
+                // dùng for viết hàm tinh tổng các số trong mảng
+                var sum=0
+                for (var i = 0; i < mang2.length; i++) {
+                    sum =sum+mang2[i]
+                }
+                // console.log(sum)
+
+                // dung MAP tinh tông cac số trong mang
+                s = 0
+                mang2.map(function(value, key){
+                    s = s + value
+                })
+
+                // console.log(s);
+
+
+            // phần tiếp theo hướng dẫn sử dung localstorage 
+                // localstorage là 1 bộ nhớ tạm, có thể luu trữ data ở dạng chuỗi va luu tren trang web
+                // chỉ cần đưa data vào thì qua trang html khác có thể lay ra dung
+                // và nó chỉ cho phép luu trữ data o dang chuỗi nên khi dua array vào phải chuyển sang dang chuỗi trc như sau:
+
+                // vdu dua mang2 ở trên vào thì:
+                
+                var xx = JSON.stringify(mang2)
+                localStorage.setItem("trieu", xx)
+
+                // nghia la đưa chuỗi xx vao localstorage bang tên demo
+                // chạy thử xem nó luu trên web la nằm ở đâu
+
+                // sau khi xem đã có thì thử qua trang khác lấy ra xem
+
+
+
+
+
+
+
+
+
+                // tiếp phần thứ 2 là object, nó cung như mảng, nhưng đa dạng hơn
+                // khai bao 1 object rỗng như sau
+
+                var demo1 = {}
+                // thêm value vao object thi có 2 cach
+                demo1['vdu1'] = "samsung"
+                demo1.vdu2 = "iphone"
+
+                // nghia la dùng dấu "." hay "[]" đều dc. 
+                // và key do mình tự tạo ra
+
+                // console.log(demo1)
+
+                // key: value
+                // vdu1:"samsung"
+                // vdu2:"iphone"
+
+                // key do mình tự tạo ra
+                // value thi có thể la số, chuỗi, hoặc chứa luôn array va object(gọi là đa cấp)
+
+                // tương tự array de lấy length ra thi:
+                // console.log(Object.keys(demo1).length)
+                // và kiem tra object có data k thi tuong tu arr
+
+                // if(Object.keys(demo1).length > 0){....}
+
+                // cú phap lay 1 value ra thi cung tuong tu arr
+                // tên-obj[key]
+
+                // vdu de lay iphone ra
+                // console.log(demo1['vdu2'])
+
+
+                // giờ lấy mang1 ở trên xuống làm value cua object va đặt key bất kỳ
+                demo1['arr'] = mang1
+                // arr: key tự minh đặt
+
+                // console.log(demo1)
+                // để lay 1 value trong obj 2 chiều thi cung như trên, nhưng láy nhiêu key hơn
+
+                // console.log(demo1["arr"][2])
+
+
+                // giờ tạo nhanh 1 obj con như sau:
+                var demo2 = {
+                    city: "da nang",
+                    name: "bao vic"
+                }
+
+                // giờ đưa obj này vao làm obj con cua demo1 như sau
+                demo1[demo2.city] = demo2;
+
+                console.log(demo1)
+                // tương tư de lay baovic ra thi lay theo key cha va con
+
+                // console.log(demo1['obj']['name'])
+
+                // do key cua obj k pai la số nên k dung for dc, ta phai dung hàm MAP rieng cho nó
+                Object.keys(demo1).map(function(key, index){
+                    // chú y giờ bên nay k con value va key như trên arr nữa
+                    // nó cho key va index
+                    // log key ra xem nó la cai gi 
+                    // console.log(key) => tra ve các key cha 
+                    // console.log(index) => index tuong tu key ben arr
+                    // vây gio de lay value ra từng cái thi lam sao?
+                   // console.log(demo1[key])
+
+
+                    // tuong tu như trên nêu value là số va muốn tinh tổng thi  như trên
+
+                    // vdu: s = s + demo1[key]
+                })
+
+                // giả sử giờ trong 
+
+
+        
+    </script>
+
+   
+</body>  
+</html>

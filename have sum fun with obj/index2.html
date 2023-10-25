@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var xx = localStorage.getItem("object1");
+      if (xx) {
+        xx = JSON.parse(xx);
+        //nếu như mình làm điều kiện if (xx) này thì mình dùng hàm map để làm gì anh nhỉ
+        // em biết là trong đề anh kêu là duyệt rồi mà khi em ko bỏ con này để convert sang thì nó như này ạ
+        // {"vd1":"samsung","vd2":"iphone","vd3":"nokia","vd4":"Oppo"}
+        // và bên localStorage "{\"vd1\":\"samsung\",\"vd2\":\"iphone\",\"vd3\":\"nokia\",\"vd4\":\"Oppo\"}"
+      }
+      // console.log(xx)
+      Object.keys(xx).map(function (
+        key,
+        index
+      ) // em chưa hiểu rõ hàm map để duyệt cho lắm , nhờ a giải thích 1 chút ạ
+      {
+        xx["vd5"] = "Sony";
+        xx["vd6"] = "Xiaomi";
+        // console.log('key : '+key+'value :'+value);
+      });
+      console.log(xx);
+      var index2 = JSON.stringify(xx);
+      localStorage.setItem("object2", index2);
+    </script>
+  </body>
+</html>
+~

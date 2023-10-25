@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>find</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .blue {
+        color: blue;
+        background-color: yellow;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $("li").click(function () {
+          //   if ($(this).find('span').hasClass('hide')) {
+          //     $(this).find('span').show();
+          //   } else {
+          //     $(this).find('span').hide();
+          //   }
+          //
+          //
+          //   if ($(this).find('span').hasClass('hide')) {
+          //     $(this).find('span').show();
+          //   } else {
+          //     $(this).find('span').hide();
+          //   }
+          //
+          //
+          $(this).find("span").hide();
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <ul>
+      <li class="first">
+        <p>Thành phần thứ 1</p>
+        <ul>
+          <li>Thành phần con thứ 1</li>
+          <li>Thành phần con thứ 2</li>
+          <li>Thành phần con thứ 3</li>
+        </ul>
+        <span class="first"> <p>Thành phần pho bo</p></span>
+      </li>
+      <li class="second">
+        <p>Thành phần thứ 2</p>
+        <ul>
+          <li>Thành phần con thứ 1</li>
+          <li>Thành phần con thứ 2</li>
+          <li>Thành phần con thứ 3</li>
+        </ul>
+        <span class="second"> <p>Thành phần hủ tiếu</p></span>
+      </li>
+      <li class="third">
+        <p>Thành phần thứ 3</p>
+        <ul>
+          <li>Thành phần con thứ 1</li>
+          <li>Thành phần con thứ 2</li>
+          <li>Thành phần con thứ 3</li>
+        </ul>
+        <span class="third"> <p>Thành phần mỹ quẽng</p></span>
+      </li>
+      <li class="fourth">
+        <p>Thành phần thứ 4</p>
+        <ul>
+          <li>Thành phần con thứ 1</li>
+          <li>Thành phần con thứ 2</li>
+          <li>Thành phần con thứ 3</li>
+        </ul>
+        <span class="fourth"> <p>Thành phần phở gà</p></span>
+      </li>
+      <li class="fifth">
+        <p>Thành phần thứ 5</p>
+        <ul>
+          <li>Thành phần con thứ 1</li>
+          <li>Thành phần con thứ 2</li>
+          <li>Thành phần con thứ 3</li>
+        </ul>
+        <span class="fifth"> <p>Thành phần bánh canh</p></span>
+      </li>
+    </ul>
+  </body>
+</html>

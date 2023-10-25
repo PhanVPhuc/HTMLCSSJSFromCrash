@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .active {
+        background-color: #11ebd8;
+      }
+      .red {
+        background: #ff0000;
+      }
+      .green {
+        background: #228b22;
+      }
+      .blue {
+        background: #0000ff;
+      }
+      .brown {
+        background: brown;
+      }
+    </style>
+  </head>
+  <!-- bai tap 1:
+
+  - tao 1 the "a"
+    + click vao the "a" lan dau thi them class "ACTIVE" vao the a
+    + click vao the "a" lan 2 , neu co class "ACTIVE" thi xoa class do di.
+    tuong tu lan 3 va 4. -->
+
+  <!--  bai tap 2:
+  - tao 1 the "a"
+    + click vao the "a" lan dau thi them class "ACTIVE" vao the a va dong thoi HIDE P di
+    + click vao the "a" lan 2 , neu co class "ACTIVE" thi xoa class do di va show the P len
+    tuong tu lan 3 va 4. 
+   ----------
+    e tao 1 button va 1 the span
+    viet ham click vao button:
+    _ lan 1 thi hide the span di
+    - lan 2 thi show span len
+    - 3 -> hide
+    - 4 -> show
+    ... -->
+  <body>
+    <script>
+      $(document).ready(function () {
+        // $('a.aLoop').click(function () {
+        //   var check = $('a').hasClass('active');
+        //   if (check == true) {
+        //     $('a').removeClass('active');
+        //     $('p').hide();
+        //   } else {
+        //     $('a').addClass('active');
+        //     $('p').show();
+        //   }
+        // });
+        $("button.btnHideAndShow").click(function () {
+          var check = $("span").hasClass("active");
+          if (check == true) {
+            $("span").removeClass("active");
+            $("span").hide(1000);
+          } else {
+            $("span").addClass("active");
+            $("span").show(1000);
+          }
+        });
+      });
+    </script>
+    <!-- <a href="#" class="active">Cai j the ? </a> -->
+    <br />
+    <!-- <p>A du anh seng</p>
+    <br />
+    <a class="aLoop">1 Click for add ,1 again for delete</a> -->
+    <button class="btnHideAndShow">Click ME !!!</button>
+    <br />
+    <br />
+    <!-- <a href="#" class="active">Cai j the ? </a> -->
+    <br />
+    <span>
+      <h1>THIS IS</h1>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAqrGjggFVnHhvCiNQ4KwJhfvuXRz6z5L7-cCkAOJ1Jw&s"
+        alt="HC"
+        srcset=""
+      />
+    </span>
+  </body>
+  <!--   bai tap 3:
+   - Tao 1 ul va 4 LI, cho mỗi LI 1 class hoặc ID rieng.
+   - Click vao Li có CLASS/ID nao  thi them màu vao cho Li do -->
+  <!-- <body>
+    <ul>
+      <li class="ul-item1">
+        Click for red
+        <label><input type="radio" name="colorRadio" id="red" />Red</label>
+        
+      </li>
+      <li class="ul-item2">
+        Click for blue
+        <label><input type="radio" name="colorRadio" id="blue" />blue</label>
+      </li>
+      <li class="ul-item3">
+        Click for green label 
+        <input type="radio" name="colorRadio" id="green" />green</label>
+      </li>
+      <li class="ul-item4">
+        Click for brown label 
+        <input type="radio" name="colorRadio" id="brown" />brown</label>
+      </li>
+    </ul>
+
+    <script>
+      $(document).ready(function () {
+        $('input[type="radio"]').click(function () {
+          var color = $(this).val();
+          if (color == "red") {
+            $('li').css('color', 'red');
+            } else if (color == "blue") {
+              $('li').css('color', 'blue');
+              } else if (color == "green") {
+                $('li').css('color', 'green');
+                } else if (color == "brown") {
+                  $('li').css('color', 'brown');
+                  }
+        });
+      });
+    </script>
+  </body> -->
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+  </head>
+  <body>
+    <!-- <script>
+      // khai bao 1 bien dung tu khoa' var
+      var x = 2;
+      var y = 2;
+
+      tong = x + y;
+
+      // alert: hien thi thong bao ra man hinh
+      // alert(tong)
+
+      // : hien thi thong bao duoi thanh conssole
+      // console.log(tong)
+
+      // bien thi co nhieu kieu:
+      // - kieu so (int/number): 531515
+      // - kieu chuoi (string): "hoc lap trinh", chuoi phai nam trong dau ""
+      // - bien va so thi k dc dat trong dau ""
+
+      // alert("tong") => chuoi
+
+      // 1 so bieu thuc su dung trong if else
+      // ==, !=, &&, ||, *, /, >, >=, <,<=
+      // %: chia lay phan du
+
+      // 4 % 2 => 0
+      // 4 % 3 != 0
+
+      if (tong % 2 == 0) {
+        // alert("day la so chan")
+      } else {
+        // alert("day la so le")
+      }
+
+      // lenh if else co the long nhau
+      // cho 1 so tu nhien N,
+      // viet ham kiem tra:
+      // - neu N > 100 : thi kiem tra n la so chan hay le
+      // - neu N < 100 : thi kiem tra n la so chan hay le
+
+      var n = 53;
+      if (n > 100) {
+        if (n % 2 == 0) {
+          // alert("day la so chan > 100")
+        } else {
+          // alert("day la so le > 100")
+        }
+      } else {
+        if (n % 2 == 0) {
+          // alert("day la so chan < 100")
+        } else {
+          // alert("day la so le < 100")
+        }
+      }
+
+      // trong 1 cau lenh if else co the chua' nhieu dk
+      var a = 1;
+      var b = 2;
+      var c = 3;
+      // tim so max
+      if (a > b && a > c) {
+        // =>a
+      } else if (b > a && b > c) {
+        // => b
+      } else {
+        // => c
+      }
+    </script> -->
+    <!-- <script>
+        //vd1
+      var year = 2020;
+      if (year % 2 == 0) {
+        console.log(year + ' la nam chan');
+      } else {
+        console.log(year + ' la nam le');
+      }
+    </script> -->
+    <!-- <script>
+        // VD2
+      var str = 'mau do';
+      if (str === 'mau xanh') {
+        console.log('day la mau xanh');
+      } else if (str === 'mau do') console.log('day la mau do');
+      else if (str === 'mau vang') {
+        console.log('day la mau vang ');
+      } else {
+        console.log('Day la mau khac');
+      }
+    </script> -->
+    <!-- <script>
+      //VD3
+      var num = 9152;
+      if (num % 2 == 0) {
+        if (num > 100) {
+          console.log(num + ' la so chan va lon hon 100');
+        } else {
+          console.log(num + ' la so chan va nho hon 100');
+        }
+      } else {
+        if (num < 100) {
+          console.log(num + ' la so le va lon hon 100');
+        } else {
+          console.log(num + ' la so le va nho hon 100');
+        }
+      }
+    </script> -->
+    <!-- <script>
+      //VD4
+      var year = 2021;
+      if (year % 4 == 0 ||year % 400 == 0 && year % 100 != 0) {
+        console.log(year + ' la nam nhuan');
+      } else {
+        console.log(year + ' day khong phai la nam nhuan');
+      }
+    </script> -->
+    <script>
+      // function loop(year) {
+      //   // //vd1
+      //   // var year ;
+      //   // if (year % 2 == 0) {
+      //   // console.log(
+      //   //     year + ' la nam chan'
+      //   //   );
+      //   // } else {
+      //   // console.log(
+      //   //     year + ' la nam le'
+      //   //   );
+      //   // }
+      //   // vd2: var str ;
+      //   // if (str === 'mau xanh') {
+      //   //   console.log('day la mau xanh');
+      //   // } else if (str === 'mau do') console.log('day la mau do');
+      //   // else if (str === 'mau vang') {
+      //   //   console.log('day la mau vang ');
+      //   // } else {
+      //   //   console.log('Day la mau khac');
+      //   // }
+      //   // vd3: var num ;
+      //   // if (num % 2 == 0) {
+      //   //   if (num > 100) {
+      //   //     console.log(num + ' la so chan va lon hon 100');
+      //   //   } else {
+      //   //     console.log(num + ' la so chan va nho hon 100');
+      //   //   }
+      //   // } else {
+      //   //   if (num < 100) {
+      //   //     console.log(num + ' la so le va lon hon 100');
+      //   //   } else {
+      //   //     console.log(num + ' la so le va nho hon 100');
+      //   //   }
+      //   // }
+      //   // vd4: var year;
+      //   // if (year % 4 == 0 || (year % 400 == 0 && year % 100 != 0)) {
+      //   //   console.log(year + ' la nam nhuan');
+      //   // } else {
+      //   //   console.log(year + ' day khong phai la nam nhuan');
+      //   // }
+      // }
+      // function forLoop(n) {}
+      // // var n;
+      // // for (i = 0; i <= 10; i++) {
+      // //   console.log(i);
+      // // }
+      // for (var Num = 0; Num <= 10; Num++) {
+      //   console.log(Num);
+      // }
+      function forLoop(x, y, z) {
+        if (z == true) {
+          // hamFor(i);
+          hamforCong(x, y);
+        } else {
+          console.log(" cant execute");
+        }
+      }
+
+      function hamForCong(x, y) {
+        Tong = x + y;
+        console.log(Tong);
+      }
+      function Sum(x, y) {
+        var sum = 0;
+        if (x > y) {
+          console.log("ham sum cant execute");
+        } else {
+          for (var n = x; n < y; n++) {
+            sum = sum + n;
+          }
+        }
+
+        console.log(sum);
+      }
+    </script>
+    <!-- input: <input type="number" id="myNumber" value="2000" /> -->
+    <button onclick="forLoop(8,7,true)">Execute</button>
+    <button onclick="Sum(1,10)">Execute ham sum</button>
+    <!-- <p id="demo"></p> -->
+  </body>
+</html>
